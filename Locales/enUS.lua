@@ -7,4 +7,4 @@ L["You are not the Loot Master"] = true
 L[" is the winner. Come to trade with me"] = true
 L[" is the winner"] = " is the winner.\n\n.Press the [Trade] button near the winner."
 L["Wrong Item"] = " can't loot this item."
-L["Give GP without Trade confirm"] = "Give GP without Trade confirm\n(If checked, it may happen that GP is given to the person who can't loot)"
+L["Give GP without Trade confirm"] = "Give GP without Trade confirm\n(If checked, it may happen that GP is given to the person\n who can't loot)"

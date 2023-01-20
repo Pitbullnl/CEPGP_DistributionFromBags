@@ -2,9 +2,13 @@
 ..\FrameXML\UI.xsd">
 	<Script File="CEPGP_DistributionFromBags.lua"/>
 
-	<Frame name="CEPGP_DFB_frame" parent="UIParent" hidden="true" enableMouse="true" frameStrata="DIALOG" movable="true" clampedToScreen="true">
+	<Frame name="CEPGP_DFB_frame" frameStrata="DIALOG" enableMouse="true" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global" />
+			<KeyValue key="backdropColor" value="CEPGP_BLACK" type="global" />
+		</KeyValues>
 		<Size>
-			<AbsDimension x="480" y="180" />
+			<AbsDimension x="350" y="140" />
 		</Size>
 		<Anchors>
 			<Anchor point="TOPLEFT">
@@ -13,23 +17,17 @@
 				</Offset>
 			</Anchor>
 		</Anchors>
-		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+		<Backdrop bgFile="Interface\\DialogFrame\\UI-DialogBox-Background" edgeFile="Interface\\DialogFrame\\UI-DialogBox-Border" tile="true">
 			<Color r="0" g="0" b="0" />
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="12" bottom="11" />
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="35" />
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="35" />
-			</EdgeSize>
+            <EdgeSize val="16"/>
+            <TileSize val="32"/>
+			<BackgroundInsets left="5" right="5" top="5" bottom="5"/>
 		</Backdrop>
 		<Layers>
 			<Layer level="ARTWORK">
 				<Texture file="Interface\DialogFrame\UI-DialogBox-Header">
 					<Size>
-						<AbsDimension x="400" y="70"/>
+						<AbsDimension x="350" y="70"/>
 					</Size>
 					<Anchors>
 						<Anchor point="TOP">
@@ -41,16 +39,16 @@
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="$parent_title" inherits="GameFontNormal" text="Distribution From Bags">
+				<FontString name="$parent_title" inherits="GameFontNormalSmall" text="Distribution From Bags">
 					<Anchors>
 						<Anchor point="TOP">
 							<Offset>
-								<AbsDimension x="0" y="-2"/>
+								<AbsDimension x="0" y="-5"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="$parent_desc" inherits="GameFontNormal">
+				<FontString name="$parent_desc" inherits="GameFontNormalSmall">
 					<Anchors>
 						<Anchor point="TOP">
 							<Offset>
@@ -61,7 +59,7 @@
 				</FontString>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="$parent_text" inherits="GameFontNormal" justifyH="CENTER">
+				<FontString name="$parent_text" inherits="GameFontNormalSmall" justifyH="CENTER">
 					<Anchors>
 						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parent_title">
 							<Offset>
@@ -72,11 +70,11 @@
 				</FontString>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="$parent_no_trade_text" inherits="GameFontNormal" justifyH="LEFT"> 
+				<FontString name="$parent_no_trade_text" inherits="GameFontNormalSmall" justifyH="LEFT"> 
 					<Color r="1" g="1" b="1"/>
 					<Anchors>
 						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parent_text">
-							<AbsDimension x="20" y="-30" />
+							<AbsDimension x="10" y="-20" />
 						</Anchor>
 					</Anchors>
 				</FontString>
@@ -85,7 +83,7 @@
 		<Frames>
 			<Button name="$parent_close" inherits="UIPanelCloseButton">
 				<Size>
-					<AbsDimension x="40" y="40" />
+					<AbsDimension x="20" y="20" />
 				</Size>
 				<Anchors>
 					<Anchor point="TOPRIGHT">
@@ -143,28 +141,20 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="CEPGP_DFB_confirmation" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true" clampedToScreen="true">
+	<Frame name="CEPGP_DFB_confirmation" frameStrata="DIALOG" enableMouse="true" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global" />
+			<KeyValue key="backdropColor" value="CEPGP_BLACK" type="global" />
+		</KeyValues>
 		<Size>
-			<AbsDimension x="400" y="160" />
+			<AbsDimension x="250" y="120" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER" />
 		</Anchors>
-		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-			<Color r="0" g="0" b="0" />
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="12" bottom="11" />
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="32" />
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="32" />
-			</EdgeSize>
-		</Backdrop>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="CEPGP_DFB_confirmation_desc" inherits="GameFontNormal">
+				<FontString name="CEPGP_DFB_confirmation_desc" inherits="GameFontNormalSmall">
 					<Anchors>
 						<Anchor point="TOP">
 							<Offset>
@@ -178,12 +168,12 @@
 		<Frames>
 			<Button name="CEPGP_DFB_confirmation_yes" inherits="GameMenuButtonTemplate" text="Trade">
 				<Size>
-					<AbsDimension x="100" y="31" />
+					<AbsDimension x="75" y="25" />
 				</Size>
 				<Anchors>
 					<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="7.5" y="10" />
+							<AbsDimension x="10.5" y="10" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -196,12 +186,12 @@
 			</Button>
 			<Button name="CEPGP_DFB_confirmation_no" inherits="GameMenuButtonTemplate" text="No">
 				<Size>
-					<AbsDimension x="100" y="31" />
+					<AbsDimension x="75" y="25" />
 				</Size>
 				<Anchors>
 					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
 						<Offset>
-							<AbsDimension x="-7.5" y="10" />
+							<AbsDimension x="-10.5" y="10" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -218,25 +208,17 @@
 		</Attributes>
 	</Frame>
 
-	<Frame name="CEPGP_DFB_error" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true" clampedToScreen="true">
+	<Frame name="CEPGP_DFB_error" frameStrata="DIALOG" enableMouse="true" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global" />
+			<KeyValue key="backdropColor" value="CEPGP_BLACK" type="global" />
+		</KeyValues>
 		<Size>
 			<AbsDimension x="400" y="100" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER" />
 		</Anchors>
-		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-			<Color r="0" g="0" b="0" />
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="12" bottom="11" />
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="32" />
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="32" />
-			</EdgeSize>
-		</Backdrop>
 		<Layers>
 			<Layer level="OVERLAY">
 				<FontString name="CEPGP_DFB_error_desc" inherits="GameFontNormal">
